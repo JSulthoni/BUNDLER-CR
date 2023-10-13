@@ -1,13 +1,53 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+
 import reportWebVitals from './reportWebVitals';
+
+import { Nav } from './component/Nav';
+import { Search } from './component/Search';
+import { Preview } from './component/Preview';
+import { Bundler } from './component/Bundler';
+import { Main } from './component/Main';
+
+import './style/bundler.css'
+import './style/card.css'
+import './style/main.css'
+import './style/nav.css'
+import './style/preview.css'
+import './style/search.css';
+import './style/sidebar.css'
+import './index.css';
+
+
+const Container = function() {
+  return (
+    <div className='container'>
+        <Preview />
+        <Nav />
+      <div className='sidebar'>
+        <Search />
+        <Bundler />
+        <div className='footer'><p>&#169; 2023 Sulthoni development. All rights reserved.</p></div>
+      </div>
+        <Main />
+
+    </div>
+  )
+}
+
+
+
+
+
+
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Container/>
   </React.StrictMode>
 );
 

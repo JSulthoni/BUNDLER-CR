@@ -1,0 +1,95 @@
+.nav {
+    height: var(--size-8xl);
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    top: 0;
+    padding: 15px;
+}
+
+.nav__m {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: var(--size-5xl);
+    padding: 0;
+    margin: 0;
+    margin-right: 10px;
+  }
+  
+.nav__m-i {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--size-lg);
+  font-weight: 600;
+  color: var(--color-slate950);
+}
+
+.nav__m-i:hover {
+  cursor: pointer;
+}
+
+.nav__m-i:last-child {
+  color: var(--color-green600);
+}
+
+
+/* Laptop XL */
+@media (max-width: 1920px) {
+  .nav {
+    height: var(--size-7xl);
+  }
+
+  .nav__m {
+    gap: var(--size-4xl);
+  }
+    
+  .nav__m-i {
+    font-size: var(--size-base);
+  }
+}
+
+/* Laptop L */
+@media (max-width: 1441px) {
+  .nav {
+    height: var(--size-6xl);
+  }
+
+  .nav__m {
+    gap: var(--size-3xl);
+  }
+    
+  .nav__m-i {
+    font-size: var(--size-sm);
+  }
+}
+
+/* Laptop M */
+@media (max-width: 1281px) {
+  .nav {
+    height: var(--size-5xl);
+  }
+
+  .nav__m {
+    gap: var(--size-2xl);
+  }
+    
+  .nav__m-i {
+    font-size: var(--size-xs);
+  }
+}
+
+/* Laptop S */
+/* @media (max-width: 1025px) {
+} */
+
+/* Tablet */
+/* @media (max-width: 769px) {
+} */
+
+/* Mobile */
+@media (max-width: 641px) {
+  .nav {
+    position: sticky;
+  }
+}
