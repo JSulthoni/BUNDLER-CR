@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
 
-export const SearchBar = function ({setResult}) {
+export const SearchBar = function ({setSearch}) {
 
     // Initial State
     const [input, setInput] = useState('')
@@ -14,7 +14,7 @@ export const SearchBar = function ({setResult}) {
             const result = json.filter((product) => {
                 return value && product && product.title && product.title.toLowerCase().includes(value)
             })
-            setResult(result)
+            setSearch(result)
         }) 
     }
 

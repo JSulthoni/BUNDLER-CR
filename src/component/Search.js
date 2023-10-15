@@ -8,16 +8,16 @@ import { SearchResult } from './SearchResult'
 export const Search = function() {
 
     // Initial State
-    const [result, setResult] = useState([])
-
+    const [search, setSearch] = useState([])
     return (
         <div className='search'>
             <h1 className='search-t'>BUNDLER</h1>
             <div className='search-cont'>
-                <SearchBar setResult={setResult} />
+                <SearchBar 
+                    setSearch={setSearch} />
                 <img className='search-cart' src={carticon} alt='shopcart' aria-label='gotoshopcart'/>
             </div>
-                {result.length > 0 && <SearchResult result={result} />}
+                {search.length > 0 && <SearchResult result={search} />}
         </div>
     )
 }

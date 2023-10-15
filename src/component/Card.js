@@ -2,17 +2,17 @@ import React from "react";
 import star from '../image/star.svg'
 
 
-export const Card = function(prop) {
+export const Card = function({card, onClick}) {
     return(
-        <div className="card">
-            <img className="card-img" src={prop.card.image} alt='card preview'/>
+        <div className="card" onClick={onClick}>
+            <img className="card-img" src={card.image ? card.image : 'https://placehold.co/400' } alt='card preview'/>
             <div className="card-prod">
-                <h4 className="card-t">{prop.card.title}</h4>
+                <h4 className="card-t">{card.title}</h4>
                 <div className="card-i">
-                    <div className='card-price'>{prop.card.price}</div>
+                    <div className='card-price'>{card.price}</div>
                     <div className='card-i1'>
                         <img className='card-star' src={star} alt='cardrating'/>
-                        <div className='card-rate'>{prop.card.rating.rate}</div>
+                        <div className='card-rate'>{card.rating.rate}</div>
                         <p>500+ sold</p>
                     </div>
                 </div>

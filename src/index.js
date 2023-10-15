@@ -4,9 +4,7 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 
 import { Nav } from './component/Nav';
-import { Search } from './component/Search';
-import { Preview } from './component/Preview';
-import { Bundler } from './component/Bundler';
+import { Sidebar } from './component/Sidebar';
 import { Main } from './component/Main';
 
 import './style/bundler.css'
@@ -20,17 +18,13 @@ import './index.css';
 
 
 const Container = function() {
+
+
   return (
     <div className='container'>
-        <Preview />
         <Nav />
-      <div className='sidebar'>
-        <Search />
-        <Bundler />
-        <div className='footer'><p>&#169; 2023 Sulthoni development. All rights reserved.</p></div>
-      </div>
+        <Sidebar />
         <Main />
-
     </div>
   )
 }

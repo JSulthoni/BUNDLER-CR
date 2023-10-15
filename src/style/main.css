@@ -2,7 +2,7 @@
     position: fixed;
     top: var(--size-8xl);
     display: block;
-    padding-top: 32px;
+    padding-top: 0;
     padding-left: 15vw;
     padding-bottom: 32px;
     width: 100%;
