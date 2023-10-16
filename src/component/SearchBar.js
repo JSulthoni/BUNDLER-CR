@@ -26,7 +26,7 @@ export const SearchBar = function ({setSearch}) {
 
     // Return
     return (
-        <div className='search-bar'>
+        <div className='src-bar'>
             <input 
             type='text' 
             placeholder='find product/bundle' 

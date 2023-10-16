@@ -30,9 +30,6 @@
 
 *, *::after, *::before {
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-  font-weight: normal;
-  font-style: normal;
   margin: 0;
   padding: 0;
 }
@@ -43,6 +40,16 @@
 
 html {
   scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
 }
 
 body {
@@ -69,12 +76,34 @@ body {
   height: 2.5em;
 }
 
+.flexcol {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+button:hover {
+  cursor: pointer !important;
+}
+
+input:hover {
+  cursor:  pointer !important;
+}
+
 .footer {
   padding: 10px;
 }
 
 .footer p {
-  font-family: 'Inter', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: var(--size-sm);
   line-height: 1em;
 }

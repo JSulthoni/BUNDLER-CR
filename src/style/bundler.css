@@ -1,30 +1,26 @@
-.bundler {
+.bdl {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
   gap: 20px;
   padding: 15px;
   background: var(--color-white);
   font-family: 'Inter', sans-serif;
 }
 
-.bundler-t {
+.bdl-t {
   font-size: var(--size-2xl);
   color: var(--color-green600);
   font-weight: 600;
   letter-spacing: 0.05em;
 }
 
-.bundler-container {
+.bdl-cont {
   display: grid;
   grid-auto-columns: calc((100% - 5px));
   grid-auto-rows: var(--size-8xl);
   gap: 20px;
 }
 
-.bundler-container > div {
+.bdl-cont div {
   padding-left: 10px;
   border-radius: 5px;
   box-shadow: 0 0 2px var(--color-slate400) inset;
@@ -34,31 +30,27 @@
   align-items: center;
 }
 
-.bundler-container > div:hover {
+.bdl-cont div:hover {
   background: linear-gradient(90deg, var(--color-green50) 10%, var(--color-white));
   opacity: 0.9;
 }
 
-.bundler-button {
+.bdl-btn {
   background: linear-gradient(90deg, var(--color-green600) 10%, var(--color-green400));
-  border: none;
   width: calc((100% - 5px));
-  height: 2em;
-  border-radius: 5px;
-  box-shadow: 0 0 5px var(--color-slate400) inset;
   font-size: var(--size-lg);
   font-weight: 400;
   letter-spacing: 0.1em;
   color: var(--color-white);
 }
 
-.bundler-item {
+.bdl-item {
   margin-left: 10px;
   font-size: var(--size-sm);
   color: var(--color-slate600);
 }
 
-.bundler-item:hover {
+.bdl-item:hover {
   background: linear-gradient(90deg, var(--color-green50) 10%, var(--color-white));
   opacity: 0.9;
 }
@@ -70,20 +62,20 @@
 
 /* Laptop XL */
 @media (max-width: 1920px) {
-  .bundler-t {
+  .bdl-t {
     font-size: var(--size-lg);
   }
 
-  .bundler-container {
+  .bdl-cont {
     grid-auto-rows: var(--size-6xl);
     gap: 10px;
   }
 
-  .bundler-button {
+  .bdl-btn {
     font-size: var(--size-base);
   }
   
-  .bundler-item {
+  .bdl-item {
     font-size: var(--size-xs);
     width: 100%;
     overflow: hidden;
@@ -98,19 +90,19 @@
 
 /* Laptop L */
 @media (max-width: 1441px) {
-  .bundler-t {
+  .bdl-t {
     font-size: var(--size-base);
   }
 
-  .bundler-container {
+  .bdl-cont {
     grid-auto-rows: var(--size-5xl);
   }
 
-  .bundler-button {
+  .bdl-btn {
     font-size: var(--size-sm);
   }
   
-  .bundler-item {
+  .bdl-item {
     font-size: var(--size-xxs);
     color: var(--color-slate600);
   }
@@ -129,13 +121,13 @@
 } */
 
 /* Tablet */
-/* @media (max-width: 769px) {
+/* @media (max-width: 875px) {
 } */
 
 
 /* Mobile */
 @media (max-width: 641px) {
-  .bundler-container {
+  .bdl-cont {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: var(--size-4xl);
     gap: 0.5em;

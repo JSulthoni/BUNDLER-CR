@@ -5,11 +5,12 @@ import reportWebVitals from './reportWebVitals';
 
 import { Nav } from './component/Nav';
 import { Sidebar } from './component/Sidebar';
-import { Main } from './component/Main';
+import { Store } from './component/Store';
 
 import './style/bundler.css'
 import './style/card.css'
-import './style/main.css'
+import './style/hero.css'
+import './style/store.css'
 import './style/nav.css'
 import './style/preview.css'
 import './style/search.css';
@@ -22,9 +23,20 @@ const Container = function() {
 
   return (
     <div className='container'>
+    <header>
         <Nav />
+    </header>
+    <section className='hero'>
+        <div>
+          <h1 className='hero-t'>BUNDLER</h1>
+        </div>
+    </section>
+    <section className='main'>
+    <main>
         <Sidebar />
-        <Main />
+        <Store />
+    </main>
+    </section>
     </div>
   )
 }

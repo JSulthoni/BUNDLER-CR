@@ -1,16 +1,13 @@
 .sidebar {
-    position: sticky;
+    position: absolute;
+    left: 0;
     top: 0;
-    z-index: 998;
+    z-index: 999;
     width: 15vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
     background: var(--color-white);
-    box-shadow: 0 0 10px var(--color-slate200);
-  }
+    box-shadow: 0 10px 10px var(--color-slate200);
+ }
 
 
 /* Laptop XL */
@@ -25,25 +22,25 @@
 } */
 
 /* Laptop M */
-/* @media (max-width: 1281px) {
-} */
-
-/* Laptop S */
-@media (max-width: 1025px) {
+@media (max-width: 1281px) {
   .sidebar {
     width: 25vw;
   }
 }
 
+/* Laptop S */
+@media (max-width: 1025px) {
+}
+
 /* Tablet */
-/* @media (max-width: 769px) {
-} */
+@media (max-width: 875px) {
+}
 
 /* Mobile */
 @media (max-width: 641px) {
-  .sidebar {
+  /* .sidebar {
     position: fixed;
     width: 100%;
     height: 290px;
-  }
+  } */
 }

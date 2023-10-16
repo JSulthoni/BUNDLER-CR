@@ -1,28 +1,26 @@
-.search {
+.src {
   position: relative;
-  display: block;
   padding: 15px;
-  font-family: 'Inter', sans-serif;
 }
   
-.search-cont {
-  display: flex;
-  flex-direction: row;
+.src-cont {
   justify-content: space-between;
   align-items: center;
 }
 
-.search-t {
-  font-size: var(--size-8xl);
-  font-weight: 600;
+h1.src-t {
+  font-family: 'Rubik', sans-serif;
+  font-size: 2.1vw;
+  font-weight: 500;
   color: var(--color-green600);
   letter-spacing: 0.1em;
   margin-bottom: 10px;
 }
 
-.search-bar {
-  line-height: var(--size-6xl);
-  width: 100%;
+.src-bar {
+  line-height: 3em;
+  width: 12vw;
+  min-width: 10vw;
   padding: 0.25em;
   margin-right: 0.5em;
   background: var(--color-white);
@@ -31,12 +29,12 @@
   box-shadow: 0 0 2px var(--color-slate400) inset;
 }
 
-.search-bar:focus-within {
+.src-bar:focus-within {
   background: linear-gradient(90deg, var(--color-green50) 10%, var(--color-white));
 }
 
 
-.search-bar > input {
+.src-bar > input {
   background-color: transparent;
   border: none;
   width: 100%;
@@ -46,28 +44,25 @@
   color: var(--color-slate400);
 }
 
-.search-bar > input:focus {
+.src-bar > input:focus {
   outline: none;
   color: var(--color-slate950);
 }
 
-.search-res {
-  width: 100%;
+.src-res {
   background-color: var(--color-white);
   box-shadow: 0 0 2px var(--color-slate400) inset;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 5px;
+  gap: 0.5rem;
   padding: 5px;
   border-radius: 5px;
   margin-top: 1rem;
+  width: 13.65vw;
   max-height: max-content;
   position: absolute;
   z-index: 999;
 }
 
-.search-res-list {
+.src-res-list {
   border-radius: 5px;
   padding: 5px 10px;
   font-size: var(--size-base);
@@ -77,31 +72,35 @@
   text-overflow: ellipsis;
 }
 
-.search-res-list:hover {
+.src-res-list:hover {
   background: linear-gradient(90deg, var(--color-green50) 10%, var(--color-white));
 }
 
-.search-cart {
-  height: var(--size-7xl);
+.src-cart {
+  width: 2vw;
+  filter: invert(31%) sepia(13%) saturate(986%) hue-rotate(176deg) brightness(93%) contrast(85%);
+  border-radius: 50%;
+  background: none;
+  transition-duration: 250ms;
 }
 
+.src-cart:hover {
+  filter: none;
+  transform: scale(1.1);
+}
 
 /* Laptop XL */
 @media (max-width: 1920px) {
-  .search-bar > input {
+  .src-bar > input {
     font-size: var(--size-sm);
   }
-  .search-res-list {
+  .src-res-list {
     font-size: var(--size-sm);
   }
-  .search-t {
-    font-size: var(--size-5xl);
-  }
-  .search-bar {
-    line-height: var(--size-5xl);
+  .src-bar {
     font-size: var(--size-base);
   }
-  .search-cart {
+  .src-cart {
     height: var(--size-7xl);
     filter: invert(31%) sepia(13%) saturate(986%) hue-rotate(176deg) brightness(93%) contrast(85%);
   }
@@ -109,80 +108,55 @@
 
 /* Laptop L */
 @media (max-width: 1441px) {
-  .search-bar > input {
+  .src-bar > input {
     font-size: var(--size-xs);
   }
-  .search-t {
-    font-size: var(--size-3xl);
-  }
-  .search-bar {
-    line-height: var(--size-4xl);
+  .src-bar {
     font-size: var(--size-sm);
   }
-  
-  .search-cart {
-    height: var(--size-5xl);
+  .src-cart {
+    width: 2rem;
   }
 }
 
 /* Laptop M */
 @media (max-width: 1281px) {
-  .search-bar > input {
+  h1.src-t {
+    font-size: 1.7rem;
+  }
+  .src-bar > input {
     font-size: var(--size-xs);
   }
-  .search-res-list {
+  .src-res-list {
     font-size: var(--size-xs);
   }
-  .search-t {
-    font-size: var(--size-5xl);
-  }
-  .search-bar {
-    line-height: var(--size-3xl);
+  .src-bar {
     font-size: var(--size-xs);
   }
-  .search-cart {
-    height: var(--size-4xl);
+  .src-bar {
+    width: 25vw;
+    font-size: var(--size-xxs);
+  }
+  .src-res {
+    width: 22.5vw;
   }
 }
 
 /* Laptop S */
 @media (max-width: 1025px) {
-  .search-t {
-    font-size: var(--size-3xl);
-  }
-  
-  .search-bar {
-    line-height: var(--size-3xl);
-    font-size: var(--size-xxs);
-  }
-  
-  .search-cart {
-    height: var(--size-3xl);
-    margin-right: -12px;
-  }
 }
 
 /* Tablet */
-@media (max-width: 769px) {
-  .search-t {
-    font-size: var(--size-xl);
-  }
-  
-  .search-cart {
-    height: var(--size-3xl);
-    margin-right: -12px;
-  }
+@media (max-width: 875px) {
 }
 
 /* Mobile */
-@media (max-width: 641px) {  
-  .search-bar {
-    line-height: var(--size-3xl);
+@media (max-width: 641px) {
+  .src-bar {
+    width: 100%;
     font-size: var(--size-sm);
   }
-  
-  .search-cart {
-    height: var(--size-5xl);
-    margin-right: 0;
-  }
+  .src-res {
+    width: 100%;
+  }  
 }

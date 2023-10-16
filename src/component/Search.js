@@ -10,12 +10,12 @@ export const Search = function() {
     // Initial State
     const [search, setSearch] = useState([])
     return (
-        <div className='search'>
-            <h1 className='search-t'>BUNDLER</h1>
-            <div className='search-cont'>
+        <div className='src'>
+        <h1 className='src-t'>BUNDLER</h1>
+            <div className='flexrow src-cont'>
                 <SearchBar 
                     setSearch={setSearch} />
-                <img className='search-cart' src={carticon} alt='shopcart' aria-label='gotoshopcart'/>
+                <img className='src-cart' src={carticon} alt='shopcart' aria-label='gotoshopcart'/>
             </div>
                 {search.length > 0 && <SearchResult result={search} />}
         </div>
