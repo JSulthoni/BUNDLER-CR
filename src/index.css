@@ -34,20 +34,23 @@
   padding: 0;
 }
 
-*:hover {
-  cursor: default;
+button:hover, a:hover, input:hover {
+  cursor: pointer !important;
 }
 
 html {
   scroll-behavior: smooth;
   font-family: 'Inter', sans-serif;
+  color: var(--color-slate950);
   scroll-snap-type: y mandatory;
 }
 
 section {
+  position: relative;
   padding: 0;
   margin: 0;
   height: 100vh;
+  width: auto;
   scroll-snap-align: start;
   position: relative;
 }
@@ -55,6 +58,7 @@ section {
 body {
   margin: 0;
   padding: 0;
+  overscroll-behavior: contain;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -64,7 +68,7 @@ body {
   padding: 0;
 }
 
-.button {
+.btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,7 +78,18 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 5px var(--color-slate400) inset;
   height: 2.5em;
+  font-family: 'Inter', sans-serif;
+  color: var(--color-slate600);
+  background: linear-gradient(90deg, var(--color-slate50) 1%, var(--color-white));
+
+  transition-duration: 150ms;
+  transition-timing-function: ease;
 }
+
+.btn:active {
+  scale: 0.95;
+}
+
 
 .flexcol {
   display: flex;
@@ -90,26 +105,33 @@ body {
   align-items: center;
 }
 
-button:hover {
-  cursor: pointer !important;
+.clickable {
+  cursor: pointer;
+  transform: scale(1);
+  transition-duration: 150ms;
+  transition-timing-function: ease;
 }
 
-input:hover {
-  cursor:  pointer !important;
+.clickable:active {
+  transform: scale(0.95);
 }
 
 .footer {
-  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  z-index: 1001;
 }
 
 .footer p {
-  font-family: 'IBM Plex Sans', sans-serif;
   font-size: var(--size-sm);
+  letter-spacing: -0.01em;
   line-height: 1em;
 }
 
 /* Laptop XL */
-@media (max-width: 1885px) {
+@media (max-width: 1920px) {
   .footer p {
     font-size: var(--size-xs);
   }
@@ -131,19 +153,33 @@ input:hover {
 } */
 
 /* Tablet */
-/* @media (max-width: 769px) {
-} */
+@media (max-width: 910px) {
+  .footer p {
+    width: 200px;
+    word-wrap: break-word;
+    font-size: var(--size-xxs);
+  }
+}
 
 /* Mobile */
 @media (max-width: 641px) {
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overscroll-behavior: contain;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
   .content {
     display: flex;
     flex-direction: column;
     overflow: hidden;
   }
-
-  .footer {
-    display: none;
+  .footer p {
+    width: 100%;
   }
-
+  html {
+    scroll-snap-type: y proximity;
+  }
 }

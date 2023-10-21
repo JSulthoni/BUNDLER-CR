@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-h1.src-t {
+h2.src-t {
   font-family: 'Rubik', sans-serif;
   font-size: 2.1vw;
   font-weight: 500;
@@ -18,10 +18,10 @@ h1.src-t {
 }
 
 .src-bar {
-  line-height: 3em;
+  line-height: 2rem;
   width: 12vw;
   min-width: 10vw;
-  padding: 0.25em;
+  padding: 0.1em;
   margin-right: 0.5em;
   background: var(--color-white);
   border-radius: 5px;
@@ -52,11 +52,10 @@ h1.src-t {
 .src-res {
   background-color: var(--color-white);
   box-shadow: 0 0 2px var(--color-slate400) inset;
-  gap: 0.5rem;
-  padding: 5px;
+  padding: 5px 0;
   border-radius: 5px;
-  margin-top: 1rem;
-  width: 13.65vw;
+  margin-top: 0.5rem;
+  width: 13vw;
   max-height: max-content;
   position: absolute;
   z-index: 999;
@@ -64,8 +63,8 @@ h1.src-t {
 
 .src-res-list {
   border-radius: 5px;
-  padding: 5px 10px;
-  font-size: var(--size-base);
+  padding: 10px 5px 10px 1em;
+  font-size: var(--size-lg);
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
@@ -81,12 +80,6 @@ h1.src-t {
   filter: invert(31%) sepia(13%) saturate(986%) hue-rotate(176deg) brightness(93%) contrast(85%);
   border-radius: 50%;
   background: none;
-  transition-duration: 250ms;
-}
-
-.src-cart:hover {
-  filter: none;
-  transform: scale(1.1);
 }
 
 /* Laptop XL */
@@ -121,8 +114,8 @@ h1.src-t {
 
 /* Laptop M */
 @media (max-width: 1281px) {
-  h1.src-t {
-    font-size: 1.7rem;
+  h2.src-t {
+    font-size: var(--size-3xl);
   }
   .src-bar > input {
     font-size: var(--size-xs);
@@ -147,16 +140,19 @@ h1.src-t {
 }
 
 /* Tablet */
-@media (max-width: 875px) {
+@media (max-width: 910px) {
+  h2.src-t {
+    font-size: var(--size-2xl);
+  }
 }
 
 /* Mobile */
-@media (max-width: 641px) {
+@media (max-width: 640px) {
   .src-bar {
     width: 100%;
     font-size: var(--size-sm);
   }
   .src-res {
-    width: 100%;
+    width: 93vw;
   }  
 }

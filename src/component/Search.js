@@ -5,19 +5,18 @@ import { SearchBar } from './SearchBar'
 import { SearchResult } from './SearchResult'
 
 
-export const Search = function() {
-
-    // Initial State
+const Search = ({dispatch}) => {
     const [search, setSearch] = useState([])
     return (
         <div className='src'>
-        <h1 className='src-t'>BUNDLER</h1>
+        <h2 className='src-t'>BUNDLER</h2>
             <div className='flexrow src-cont'>
                 <SearchBar 
                     setSearch={setSearch} />
-                <img className='src-cart' src={carticon} alt='shopcart' aria-label='gotoshopcart'/>
+                <img className='src-cart clickable' src={carticon} alt='shopcart' aria-label='gotoshopcart'/>
             </div>
-                {search.length > 0 && <SearchResult result={search} />}
+                {search.length > 0 && <SearchResult result={search} dispatch={dispatch}/>}
         </div>
-    )
-}
+    )}
+
+export default Search;

@@ -1,0 +1,121 @@
+.abt-art {
+    width: 70%;
+    height: 80%;
+    margin: 0 auto;
+    transform: translateY(12%);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 20vh 2fr 1fr;
+    gap: 25px;
+}
+
+.abt-art > div {
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+}
+
+.abt-1st, .abt-3rd {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+.abt-3rd {
+    grid-row: 3 / span 1;
+}
+
+.abt-3rd a {
+    align-self: center;
+    color: #fff;
+    font-size: var(--size-2xl);
+    letter-spacing: 0.1em;
+    height: 2em;
+    line-height: 2em;
+    width: max-content;
+    padding: 0 10px;
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--color-green600);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.abt-art h3 {
+    text-align: center;
+    font-size: 2vw;
+    margin-bottom: 1em;
+}
+
+.abt-art p {
+    line-height: 1.5em;
+    font-size: var(--size-2xl);
+}
+
+.abt-art span {
+    font-family: 'Rubik', sans-serif;
+    color: var(--color-green600);
+    font-weight: 500;
+}
+
+/* Laptop XL */
+@media (max-width: 1920px) {  
+    .abt-3rd a {
+        font-size: var(--size-xl);
+    }
+    .abt-art h3 {
+        font-size: 2vw;
+    }
+    .abt-art p {
+        font-size: var(--size-xl);
+    }
+}
+
+/* Laptop L */
+@media (max-width: 1441px) {
+    .abt-3rd a {
+        font-size: var(--size-lg);
+    }
+    .abt-art h3 {
+        font-size: 2vw;
+    }
+    .abt-art p {
+        font-size: var(--size-lg);
+    }
+}
+
+/* Laptop M */
+@media (max-width: 1281px) {
+}
+
+/* Laptop S */
+@media (max-width: 1025px) {
+    .abt-3rd a {
+        font-size: var(--size-base);
+    }
+    .abt-art h3 {
+        font-size: var(--size-xl);
+    }
+    .abt-art p {
+        font-size: var(--size-base);
+    }
+}
+
+/* Tablet */
+@media (max-width: 910px) {
+    .abt-3rd a {
+        font-size: var(--size-sm);
+    }
+    .abt-art h3 {
+        font-size: var(--size-lg);
+    }
+    .abt-art p {
+        font-size: var(--size-sm);
+    }
+}
+  
+  
+/* Mobile */
+@media (max-width: 640px) {
+
+}
+  

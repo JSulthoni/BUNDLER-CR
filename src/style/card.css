@@ -1,5 +1,5 @@
 .card {
-    padding: 10px;
+    padding: 15px;
     gap: 0.5em;
     background: var(--color-white);
     border-radius: 5px;
@@ -22,72 +22,73 @@
 }
 
 .card-t {
-    font-size: var(--size-base);
+    font-size: var(--size-2xl);
+    font-weight: 500;
+    line-height: 1em;
     letter-spacing: 0.05em;
-    margin-bottom: 5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 200px;
-}
-
-.card-feature {
-    max-width: 100px;
-    gap: 0.1em;
-    font-weight: normal;
-    color: var(--color-slate950);
-}
-
-.card-prod {
-    display: block;
-}
-
-.card-i {
-    display: block;
-}
-
-.card-star {
-    height: var(--size-xl);
-    margin-right: 0.3em;
-}
-
-.card-rate {
-    color: var(--color-slate400);
-    font-size: var(--size-xl);
-    margin-right: auto;
+    width: 95%;
+    margin-bottom: 0.5em;
 }
 
 .card-price {
-    font-size: var(--size-2xl);
-    font-weight: 500;
+    font-size: var(--size-4xl);
+    line-height: 1em;
+    color: var(--color-green600);
+    font-weight: 600;
+    margin-bottom: 0.25em;
 }
 .card-price::before {
     content: '$';
     margin-right: 0.3em;
 }
 
+.card-star {
+    height: var(--size-3xl);
+    margin-right: 0.3em;
+    fill: aqua;
+}
+
+.card-rate {
+    margin-right: auto;
+}
+
+.card-count, .card-rate {
+    font-size: var(--size-xl);
+}
 
 /* Laptop XL */
 @media (max-width: 1920px) {
     .card-t {
-        font-size: var(--size-sm);
+        font-size: var(--size-base);
     }
-
     .card-star {
         height: var(--size-base);
     }
-
-    .card-rate {
+    .card-count, .card-rate {
         font-size: var(--size-sm);
     }
-
     .card-price {
-        font-size: var(--size-xl);
+        font-size: var(--size-2xl);
     }
 }
 
 /* Laptop L */
 @media (max-width: 1441px) {
+    .card-t {
+        font-size: var(--size-sm);
+    }
+    .card-star {
+        height: var(--size-base);
+    }
+    .card-count, .card-rate {
+        font-size: var(--size-sm);
+    }
+    .card-price {
+        font-size: var(--size-xl);
+    }
 }
 
 /* Laptop M */
@@ -96,30 +97,40 @@
         font-size: var(--size-xs);
     }
     .card-star {
-        height: var(--size-xs);
+        height: var(--size-sm);
     }
-
-    .card-rate {
+    .card-count, .card-rate {
         font-size: var(--size-xs);
     }
-
     .card-price {
         font-size: var(--size-lg);
     }
 }
 
 /* Laptop S */
-@media (max-width: 1025px) {
-}
+/* @media (max-width: 1025px) {
+} */
 
 /* Tablet */
-@media (max-width: 875px) {
+@media (max-width: 910px) {
+    .card-t {
+        font-size: var(--size-xxs);
+    }
+    .card-star {
+        height: var(--size-xs);
+    }
+    .card-count, .card-rate {
+        font-size: var(--size-xxs);
+    }
+    .card-price {
+        font-size: var(--size-base);
+    }
 }
 
-
 /* Mobile */
-@media (max-width: 641px) {
+@media (max-width: 640px) {
     .card {
-        width: 100%;
+        width: 88vw;
+        height: 88vw;
     }
 }

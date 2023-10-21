@@ -2,19 +2,25 @@ import React from "react";
 import star from '../image/star.svg'
 
 
-export const Card = function({card, onClick}) {
-    return(
-        <div className="flexcol card" onClick={onClick}>
-            <img className="card-img" src={card.image ? card.image : 'https://placehold.co/400' } alt='card preview'/>
+export const Card = function({card, dispatch}) {
+    // const rating = card.rating.rate
+    // const fillColor =  
+    //             rating >= 4.5 ? '#4ade80' : 
+    //             rating >= 4 ? '#16a34a' : 
+    //             rating >= 3.5 ? '#166534' : '#94a3b8'
+    // const fillStyle = {backgroundColor : fillColor}
 
-            <div className="card-prod">
-                <h4 className="card-t">{card.title}</h4>
-                <div className="card-i">
-                    <div className='card-price'>{card.price}</div>
+    return(
+        <div className="flexcol card clickable" onClick={() => dispatch({type: 'getid', payload: {id : card.id}})}>
+            <img className="card-img" src={card.image ? card.image : 'https://placehold.co/400' } alt='card preview'/>
+            <div className="flexcol">
+                <h3 className="card-t">{card.title}</h3>
+                <div className="flexcol">
+                    <span className='card-price'>{card.price}</span>
                     <div className='flexrow'>
                         <img className='card-star' src={star} alt='cardrating'/>
-                        <div className='card-rate'>{card.rating.rate}</div>
-                        <p>500+ sold</p>
+                        <span className='card-rate'>{card.rating.rate}</span>
+                        <span className="card-count">{card.rating.count}+ sold</span>
                     </div>
                 </div>
             </div>

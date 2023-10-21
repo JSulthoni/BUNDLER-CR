@@ -1,13 +1,13 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 
 
-export const SearchBar = function ({setSearch}) {
+export const SearchBar = ({setSearch}) => {
 
     // Initial State
     const [input, setInput] = useState('')
 
     // Fetching Data
-    const getData = function(value) {
+    const getData = (value) => {
         fetch('https://fakestoreapi.com/products')
         .then((res) => res.json())
         .then((json) => {
@@ -19,7 +19,7 @@ export const SearchBar = function ({setSearch}) {
     }
 
     // Event Handler
-    const handleClick = function(value) {
+    const handleClick = (value) => {
         setInput(value)
         getData(value)
     }

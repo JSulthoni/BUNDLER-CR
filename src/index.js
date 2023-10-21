@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom/client';
 
 import reportWebVitals from './reportWebVitals';
 
-import { Nav } from './component/Nav';
-import { Sidebar } from './component/Sidebar';
-import { Store } from './component/Store';
+import About from './component/About';
+import Nav from './component/Nav';
+import Main from './component/Main';
 
+
+import './style/about.css'
 import './style/bundler.css'
 import './style/card.css'
 import './style/hero.css'
@@ -26,17 +28,17 @@ const Container = function() {
     <header>
         <Nav />
     </header>
-    <section className='hero'>
-        <div>
+    <section className='hero' id='hero'>
           <h1 className='hero-t'>BUNDLER</h1>
-        </div>
+          <a className='clickable' href='#main'>START NOW</a>
     </section>
-    <section className='main'>
-    <main>
-        <Sidebar />
-        <Store />
-    </main>
+    <section className='about' id='about'>
+        <About />
     </section>
+    <section className='main' id='main'>
+      <Main />
+    </section>
+    <div className='footer'><p>&#169; 2023 Sulthoni development. All rights reserved.</p></div>
     </div>
   )
 }

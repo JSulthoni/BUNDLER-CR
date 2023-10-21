@@ -8,37 +8,32 @@
 
 .str-subt {
     letter-spacing: 0.01em;
+    color: var(--color-slate950);
     font-size: 1.2vw;
     font-weight: 500;
     margin-left: 0;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.1em;
+    margin-top: 0.1em;
 }
 
 .carousel {
-    /* display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    flex-wrap: wrap;
-    gap: 1rem; */
     padding: 1rem;
     display: grid;
-    grid-template-columns: repeat(5, 26vw);
-    grid-template-rows: repeat(10, 26vw);
+    grid-template-columns: repeat(5, 19vw);
+    grid-template-rows: repeat(10, 19vw);
     grid-column-gap: 1rem;
     grid-row-gap: 1rem;
     flex-wrap: wrap;
     overflow: scroll;
-    height: 90vh;
+    height: 100vh;
     scroll-snap-type: both mandatory;
     scroll-padding: 1rem;
-    overscroll-behavior-y: contain;
+    overscroll-behavior: contain;
 }
 
 /* Laptop XL */
-@media (max-width: 1920px) {
-}
+/* @media (max-width: 1920px) { 
+} */
 
 /* Laptop L */
 @media (max-width: 1441px) {
@@ -55,25 +50,33 @@
 }
 
 /* Laptop S */
-@media (max-width: 1025px) {
-}
+/* @media (max-width: 1025px) {
+} */
 
 /* Tablet */
-@media (max-width: 875px) {
+@media (max-width: 910px) {
+    .carousel {
+        grid-template-columns: repeat(5, 26vw);
+        grid-template-rows: repeat(10, 26vw);
+    }
 }
 
 /* Mobile */
 @media (max-width: 641px) {
-    /* .str {
+    .str {
         position: relative;
         padding: 15px;
-        top: 250px;
         overflow-y: auto;
-    } */
+        height: 100%;
+    }
     .carousel {
+        position: relative;
+        display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
+        align-items: center;
         gap: 1rem;
+        flex-wrap: nowrap;
+        height: 100%;
+        width: 100%;
     }
 }

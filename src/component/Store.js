@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import { Card } from './Card'
-import { Preview } from './Preview'
 
 // Main
-export const Store = function() {
+const Store = ({dispatch}) => {
     // Fetch data
     const [mainData, setMainData] = useState([])
     useEffect( () => {
@@ -13,41 +12,31 @@ export const Store = function() {
             setMainData(data) }
             getData()
             return () => {}
-        }, [0] )
-    // Display card preview
-    const [data, setdata] = useState({})
-    const [previewVis, setPreviewVis] = useState(false)
-    const handleCardClick = (c) => {
-        setdata(c);
-        setPreviewVis(true)
-    }
-    const handleCloseButton = () => {
-        setPreviewVis(prev => !prev)
-    }
+        }, [] )
+
     // Display featured data
-    const featuredCard = mainData
-    .map(c => {
-        return <Card 
-            key = {c.id}
-            card = {c}
-            onClick={() => handleCardClick(c)}/>
-    })
+    const featuredCard = 
+        mainData
+        .map(c => {
+            return <Card 
+                key = {c.id}
+                card = {c}
+                dispatch = {dispatch}
+                />})
+
+
+    // Render
     return (
         <div className='str'>
-            {previewVis && 
-            (<Preview 
-                key={data.id} 
-                id={data.id} 
-                data={data} 
-                onClose={handleCloseButton}
-            />)}
-            <h1 className='str-subt'>Featured Items</h1>
+            {/* <p className='str-subt'>Featured Items</p> */}
             <div className='carousel'>
             {featuredCard}
             </div>
         </div>
     )
 }
+
+export default Store;
 
 // const FashionSub = function() {
 //     // Fetch data

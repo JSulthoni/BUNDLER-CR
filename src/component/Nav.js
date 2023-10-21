@@ -1,32 +1,49 @@
+import { useState, useEffect, useRef } from "react"
 import React from 'react'
 
 const LoginTab = function() {
     return (
         <>
-            <div className='log-panel'>
-                <form className='flexcol log-form'>
-                    <input type='text' value='username'/>
-                    <input type='password'/>
-                    <button className='button'>Sign In</button>
-                    <div className='separator'></div>
-                    <a>Sign Up</a>
-                </form>
-            </div>
+            <form className='flexcol log-form'>
+                <input name='username' type='text' value='username'/>
+                <input name='password' type='password'/>
+                <button className='btn'>Sign In</button>
+                <a href='#' className="clickable">Sign Up</a>
+            </form>
         </>
     )
 }
 
-export const Nav = function() {
+const Nav = function() {
+    const navRef = useRef()
+    const [open, setOpen] = useState(false)
+
+    useEffect(() => {
+        const handler = (e) => {
+            if (!navRef.current.contains(e.target)) {
+                setOpen(false)
+            }
+        }
+        document.addEventListener('mousedown', handler)
+        return () => {
+            document.removeEventListener('mousedown', handler)
+        }
+    })
+
     return (
         <>
             <nav className='nav'>
-                    <ul className='nav-m flexrow'>
-                        <div className='nav-m-i'>About</div>
-                        <div className='nav-m-i'>Get Started</div>
-                        <div className='nav-m-i'>Sign In</div>
-                    </ul>
+                <ul ref={navRef} className='nav-m flexrow'>
+                    <li className='nav-m-i clickable'><a href='#about'>About</a></li>
+                    <li className='nav-m-i clickable'><a href='#main'>Get Started</a></li>
+                    <li className='nav-m-i clickable'><span onClick={() => setOpen(!open)}>Sign In</span></li>
+                </ul>
+                <div className={`log-panel ${open ? 'active' : 'inactive'}`}>
                     <LoginTab />
+                </div>
             </nav>
         </>
     )
 }
+
+export default Nav;

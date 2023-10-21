@@ -1,8 +1,8 @@
-.hero {
+section.hero {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center ;
-    background: pink;
 }
 
 .hero-t {
@@ -24,4 +24,60 @@
 .hero-t:hover {
     letter-spacing: -0.1em;
     cursor: none;
+}
+
+
+section.hero a {
+    color: #fff;
+    font-size: var(--size-2xl);
+    letter-spacing: 0.1em;
+    height: 2em;
+    line-height: 2em;
+    width: 300px;
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--color-green600);
+    border-radius: 5px;
+}
+
+/* Laptop XL */
+@media (max-width: 1920px) {
+    section.hero a {
+        font-size: var(--size-xl);
+    }
+}
+  
+/* Laptop L */
+@media (max-width: 1441px) {
+    section.hero a {
+        font-size: var(--size-lg);
+    }
+}
+
+/* Laptop M */
+@media (max-width: 1281px) {
+    section.hero a {
+        font-size: var(--size-lg);
+    }
+}
+
+/* Laptop S */
+@media (max-width: 1025px) {
+    section.hero a {
+        font-size: var(--size-base);
+    }
+}
+
+/* Tablet */
+@media (max-width: 910px) {
+    section.hero a {
+        font-size: var(--size-sm);
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    section.hero a {
+        font-size: var(--size-xs);
+    }
 }
