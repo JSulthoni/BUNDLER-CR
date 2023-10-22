@@ -1,12 +1,9 @@
-import React, {useState} from 'react'
+import React, {useRef, useState} from 'react'
 
 
-export const SearchBar = ({setSearch}) => {
-
-    // Initial State
+export const SearchBar = ({ref, setSearch}) => {
     const [input, setInput] = useState('')
-
-    // Fetching Data
+    
     const getData = (value) => {
         fetch('https://fakestoreapi.com/products')
         .then((res) => res.json())
@@ -18,16 +15,15 @@ export const SearchBar = ({setSearch}) => {
         }) 
     }
 
-    // Event Handler
     const handleClick = (value) => {
         setInput(value)
         getData(value)
     }
 
-    // Return
     return (
         <div className='src-bar'>
             <input 
+            ref={() => useRef}
             type='text' 
             placeholder='find product/bundle' 
             value={input}

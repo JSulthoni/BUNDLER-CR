@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import React from 'react'
+import useClickOutside from "./customHook/useClickOutside"
 
 const LoginTab = function() {
     return (
@@ -15,25 +16,16 @@ const LoginTab = function() {
 }
 
 const Nav = function() {
-    const navRef = useRef()
+    const ref = useRef(null)
     const [open, setOpen] = useState(false)
 
-    useEffect(() => {
-        const handler = (e) => {
-            if (!navRef.current.contains(e.target)) {
-                setOpen(false)
-            }
-        }
-        document.addEventListener('mousedown', handler)
-        return () => {
-            document.removeEventListener('mousedown', handler)
-        }
-    })
+    useClickOutside(ref, () => setOpen(false))
+
 
     return (
         <>
             <nav className='nav'>
-                <ul ref={navRef} className='nav-m flexrow'>
+                <ul ref={ref} className='nav-m flexrow'>
                     <li className='nav-m-i clickable'><a href='#about'>About</a></li>
                     <li className='nav-m-i clickable'><a href='#main'>Get Started</a></li>
                     <li className='nav-m-i clickable'><span onClick={() => setOpen(!open)}>Sign In</span></li>
